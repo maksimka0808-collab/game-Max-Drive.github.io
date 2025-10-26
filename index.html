@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Drift — MaxCar Game</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ui">
+    <div class="title">
+      <div class="logo">MaxCar</div>
+      <h1>Drift Challenge</h1>
+    </div>
+
+    <div class="hud">
+      <div class="score">Очки: <span id="score">0</span></div>
+      <div class="driftMeter">Дрифт: <span id="drift">0.0s</span></div>
+      <div class="speed">Скорость: <span id="speed">0</span> km/h</div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn" class="btn">Старт</button>
+      <button id="resetBtn" class="btn">Рестарт</button>
+      <button id="pauseBtn" class="btn">Пауза</button>
+    </div>
+
+    <div class="hints">
+      <p>Управление: W / ↑ — газ, S / ↓ — тормоз/назад, A / ← — влево, D / → — вправо</p>
+      <p>Совет: наберите скорость, затем круто входите в поворот — держите угол для дрифта.</p>
+    </div>
+  </div>
+
+  <canvas id="game"></canvas>
+
+  <footer class="footer">
+    <small>MaxCar Drift — демо-игра. Сделано для проекта автосалона.</small>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
