@@ -1,0 +1,103 @@
+/* Light, clean UI with German accent colors */
+:root{
+  --bg: #f4f6f8;
+  --panel: #ffffff;
+  --muted: #6b7280;
+  --accent: #c4122e; /* red */
+  --gold: #ffce00;   /* yellow */
+  --black: #0b0b0b;
+  --glass: rgba(11,11,11,0.04);
+  --radius: 10px;
+  --shadow: 0 8px 24px rgba(11,11,11,0.06);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #ffffff, var(--bg));
+  color:var(--black);
+  -webkit-font-smoothing:antialiased;
+  font-size:16px;
+}
+
+/* UI overlay */
+.ui{
+  position:fixed;
+  left:18px;
+  top:18px;
+  z-index:40;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  width:320px;
+}
+
+.title{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  background:var(--panel);
+  padding:12px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+
+.logo{
+  width:48px;height:48px;border-radius:8px;
+  background:linear-gradient(135deg,var(--black),var(--accent));
+  color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;
+}
+
+.title h1{font-size:18px;margin:0}
+
+/* HUD */
+.hud{
+  display:flex;
+  gap:8px;
+  justify-content:space-between;
+  background:var(--panel);
+  padding:10px;border-radius:10px;box-shadow:var(--shadow);
+  font-weight:600;
+}
+.hud div{font-size:14px;color:var(--muted)}
+
+/* Controls */
+.controls{display:flex;gap:8px}
+.btn{
+  background:var(--accent);
+  color:#fff;border:0;padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:700;
+  box-shadow:0 6px 18px rgba(196,18,46,0.18);
+}
+.btn:active{transform:translateY(1px)}
+
+/* Hints */
+.hints{
+  background:var(--panel);padding:10px;border-radius:10px;box-shadow:var(--shadow);color:var(--muted);
+  font-size:13px;
+}
+
+/* Canvas full screen */
+#game{
+  display:block;
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+  background: #2b2b2b; /* track base */
+}
+
+/* Footer */
+.footer{
+  position:fixed;right:18px;bottom:18px;background:var(--panel);padding:8px 12px;border-radius:8px;box-shadow:var(--shadow);font-size:13px;color:var(--muted);
+  z-index:40;
+}
+
+/* Mobile adjustments */
+@media (max-width:720px){
+  .ui{left:12px;top:12px;width:92%}
+  .hud{flex-direction:column;gap:6px}
+  .controls{flex-wrap:wrap}
+}
